@@ -1,153 +1,362 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualités - Blocus Lycées</title>
-    <style>
-        /* Styles de base simples et propres */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        header {
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        h1 {
-            color: #b91c1c;
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 14px;
-        }
-        /* Style des articles / flash infos */
-        .article {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .article-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .school-name {
-            font-size: 18px;
-            font-weight: bold;
-            color: #111;
-        }
-        /* Badges de statut */
-        .badge {
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .badge-encours {
-            background-color: #fee2e2;
-            color: #b91c1c;
-            border: 1px solid #f87171;
-        }
-        .badge-leve {
-            background-color: #f3f4f6;
-            color: #4b5563;
-            border: 1px solid #d1d5db;
-        }
-        .badge-prevu {
-            background-color: #fef3c7;
-            color: #d97706;
-            border: 1px solid #fcd34d;
-        }
-        /* Date claire et précise */
-        .date-info {
-            font-size: 13px;
-            color: #555;
-            font-weight: bold;
-            margin-bottom: 12px;
-            display: block;
-            background: #f1f5f9;
-            padding: 5px 10px;
-            border-radius: 4px;
-            width: fit-content;
-        }
-        .content {
-            font-size: 15px;
-            color: #222;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 12px;
-            color: #777;
-            border-top: 1px solid #ddd;
-            padding-top: 15px;
-        }
-    </style>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTS SIO1 — Actualités</title>
 
-    <header>
-        <h1>Suivi des Blocus Lycéens</h1>
-        <p class="subtitle">Informations en direct, nettes et vérifiées sur les mobilisations dans les lycées</p>
-    </header>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --navy: #172554;
+      --blue: #4f46e5;
+      --muted: #7c879c;
+      --border: #e6eaf2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: #18233d;
+      min-height: 100vh;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    /* Barre latérale */
+    .sidebar {
+      background: #fff;
+      border-right: 1px solid var(--border);
+      padding: 34px 26px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #4f46e5, #818cf8);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      font-weight: 800;
+      box-shadow: 0 8px 22px #4f46e533;
+      margin-bottom: 30px;
+    }
+
+    .sidebar h1 {
+      font-size: 23px;
+      line-height: 1.35;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #68758b;
+      line-height: 1.8;
+      margin-top: 18px;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 55px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border: 2px solid #cbd2df;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 15px;
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    /* Contenu */
+    main {
+      padding: 58px clamp(24px, 6vw, 90px);
+      max-width: 1250px;
+      width: 100%;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 42px;
+    }
+
+    .topbar h2 {
+      color: var(--navy);
+      font-size: 28px;
+      margin-top: 10px;
+    }
+
+    .status {
+      padding: 9px 13px;
+      background: #e0f7ec;
+      color: #087443;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .feed {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .news-card {
+      position: relative;
+      display: block;
+      min-height: 240px;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 5px 20px #17255408;
+      transition: transform .2s ease, box-shadow .2s ease,
+                  border-color .2s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      border-color: #a5b4fc;
+      box-shadow: 0 16px 35px #17255412;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+    }
+
+    .purple {
+      background: #eeebff;
+    }
+
+    .blue {
+      background: #e0f2fe;
+    }
+
+    .tag {
+      background: #f1f5f9;
+      color: #64748b;
+      border-radius: 30px;
+      padding: 7px 10px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .news-card h3 {
+      font-size: 21px;
+      color: var(--navy);
+      margin-bottom: 11px;
+    }
+
+    .news-card p {
+      font-size: 14px;
+      color: #718096;
+      line-height: 1.7;
+    }
+
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .arrow {
+      font-size: 22px;
+      transition: transform .2s;
+    }
+
+    .news-card:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    .section-title {
+      margin-top: 38px;
+      margin-bottom: 15px;
+      color: var(--navy);
+      font-size: 17px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        padding: 22px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .logo {
+        margin-bottom: 18px;
+      }
+
+      .sidebar h1 {
+        font-size: 21px;
+      }
+
+      .sidebar-footer {
+        display: none;
+      }
+
+      main {
+        padding: 30px 20px;
+      }
+
+      .feed {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .topbar h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="logo">I</div>
+
+      <h1>Bienvenue sur la page de la classe du BTS SIO1</h1>
+
+      <p class="eyebrow">Mise à jour quotidienne (sauf pendant les vacances)</p>
+
+      <p class="description">
+        Retrouvez toutes les actualités, les dates importantes
+        et les informations de votre classe.
+      </p>
+
+      <div class="sidebar-footer">
+        <div class="info-icon">i</div>
+        <strong>Votre espace de classe</strong>
+        <p>Lycée Rabelais</p>
+        <p style="margin-top: 12px">BTS SIO1 · 2026</p>
+      </div>
+    </aside>
 
     <main>
-        <!-- Article 1 : Blocus en cours -->
-        <div class="article">
-            <div class="article-header">
-                <span class="school-name">Lycée Rabelais (Saint Brieuc)</span>
-                <span class="badge badge-encours">En cours</span>
-            </div>
-            <span class="date-info">📅 16 Octobre 2026 à 07:30</span>
-            <div class="content">
-                Barrières de chantier installée devant l'entrée administrative, bloquant l'entrée au lycéens 
-            </div>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">BTS SIO1 · Fil d'actualités</p>
+          <h2>Bonjour et bienvenue 👋</h2>
         </div>
+        <span class="status">● Espace actualités</span>
+      </header>
 
-        <!-- Article 2 : Blocus prévu -->
-        <div class="article">
-            <div class="article-header">
-                <span class="school-name">Mobilisation National</span>
-                <span class="badge badge-prevu">Prévu demain</span>
-            </div>
-            <span class="date-info">📅 17 Octobre 2026 à 14:00</span>
-            <div class="content">
-                Mobilisation national visant à manifester le mécontantement par rapport à l'inflation (retour des gilets jaunes🦺)  
-            </div>
-        </div>
+      <section class="feed" aria-label="Actualités de la classe">
 
-        <!-- Article 3 : Blocus levé -->
-        <div class="article">
-            <div class="article-header">
-                <span class="school-name">Lycée Rabelais (Saint Brieuc)</span>
-                <span class="badge badge-leve">Levé</span>
-            </div>
-            <span class="date-info">📅 6 Octobre 2026 à 07:30</span>
-            <div class="content">
-                Le blocus matinal a été levé suite à une discussion avec la direction de l'établissement. Reprise des cours normale cet après-midi.
-            </div>
-        </div>
+        <a class="news-card"
+           href="http://localhost/blocus.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          <div class="card-top">
+            <div class="card-icon purple">📅</div>
+            <span class="tag">PLANNING</span>
+          </div>
+          <h3>Prochain blocus</h3>
+          <p>
+            Retrouvez les prochaines dates de blocus,
+            les informations pratiques et le calendrier.
+          </p>
+          <div class="card-bottom">
+            <span>Consulter le planning</span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+        <a class="news-card"
+           href="http://localhost/devoir.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          <div class="card-top">
+            <div class="card-icon blue">📝</div>
+            <span class="tag">SCOLARITÉ</span>
+          </div>
+          <h3>Prochains devoirs</h3>
+          <p>
+            Consultez les contrôles, les devoirs à rendre
+            et les prochaines évaluations.
+          </p>
+          <div class="card-bottom">
+            <span>Voir les devoirs</span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+      </section>
+      <h3 class="section-title">Restez informé</h3>
+      <p class="hint">
+        Pensez à consulter régulièrement les informations
+        pour ne manquer aucune échéance importante.
+      </p>
     </main>
-
-    <footer>
-        <p>Média indépendant d'information lycéenne du lycée Rabelais à Saint Brieuc</p>
-    </footer>
-
+  </div>
 </body>
 </html>

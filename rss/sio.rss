@@ -2,7 +2,7 @@
 <rss version="2.0">
 
 <channel>
-  <title>Bienvenue sur la page d'accueil du BTS SIO</title>
+  <title>Bienvenue sur la page de la classe du BTS SIO1</title>
   <link>http://localhost/</link>
   <description>Suivez toutes les actualitées sur la classe de BTS SIO1</description>
   <item>
@@ -16,5 +16,4 @@
     <description>Regardez les prochains devoirs à venir</description>
   </item>
 </channel>
-
 </rss>
