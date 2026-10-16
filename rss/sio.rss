@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Bienvenue sur la page d'accueil du BTS SIO</title>
+  <link>http://localhost/</link>
+  <description>Suivez toutes les actualitées sur la classe de BTS SIO1</description>
+  <item>
+    <title>Prochain blocus</title>
+    <link>http://localhost</link>
+    <description>Suivez l'actualité des prochains blocus</description>
+  </item>
+  <item>
+    <title>Prochain devoirs</title>
+    <link>http://localhost/devoir.html</link>
+    <description>Regardez les prochains devoirs à venir</description>
+  </item>
+</channel>
+
+</rss>

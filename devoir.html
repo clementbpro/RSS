@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoirs de la Classe</title>
+    <!-- Tailwind CSS pour un design moderne et sombre -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0f172a',
+                        cardbg: '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkbg text-gray-100 min-h-screen font-sans p-4 sm:p-6">
+
+    <div class="max-w-3xl mx-auto space-y-6">
+        
+        <!-- En-tête -->
+        <header class="bg-cardbg border border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+                <span class="bg-indigo-500/10 text-indigo-400 text-xs font-semibold px-3 py-1 rounded-full border border-indigo-500/20">Classe de Terminale</span>
+                <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mt-2 text-white">📚 Prochains Devoirs</h1>
+                <p class="text-gray-400 text-sm mt-1">Planning officiel des travaux à rendre.</p>
+            </div>
+            <div class="bg-slate-800/80 px-4 py-2 rounded-xl border border-slate-700/50 text-right">
+                <span class="block text-xs text-gray-400">Statut</span>
+                <span class="text-sm font-medium text-emerald-400 flex items-center gap-1.5 justify-end">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> À jour
+                </span>
+            </div>
+        </header>
+
+        <!-- Liste des devoirs (Modifiable directement ici dans le code HTML) -->
+        <main class="space-y-4">
+            
+            <!-- Devoir 1 -->
+            <div class="bg-cardbg border border-slate-800 p-5 rounded-xl shadow-lg transition hover:border-slate-700">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-blue-500/10 text-blue-400 text-xs font-bold px-2.5 py-1 rounded border border-blue-500/20 uppercase tracking-wide">Cyber.Serv.Informat</span>
+                    </div>
+                    <!-- Date claire, nette et précise -->
+                    <div class="text-xs sm:text-sm font-semibold text-rose-400 bg-rose-500/10 px-3 py-1 rounded-lg border border-rose-500/20">
+                        📅 Lundi 2 novembre 2026
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    Finir TP Shell (ova disponible sur le cloud☁️)
+                </p>
+            </div>
+
+            <!-- Devoir 2 -->
+            <div class="bg-cardbg border border-slate-800 p-5 rounded-xl shadow-lg transition hover:border-slate-700">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-amber-500/10 text-amber-400 text-xs font-bold px-2.5 py-1 rounded border border-amber-500/20 uppercase tracking-wide">Mathématique</span>
+                    </div>
+                    <!-- Date claire, nette et précise -->
+                    <div class="text-xs sm:text-sm font-semibold text-rose-400 bg-rose-500/10 px-3 py-1 rounded-lg border border-rose-500/20">
+                        📅 Lundi 2 novembre 2026
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    Revoir le cours pour interrogation
+                </p>
+            </div>
+
+            <!-- Devoir 3 -->
+            <div class="bg-cardbg border border-slate-800 p-5 rounded-xl shadow-lg transition hover:border-slate-700">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded border border-emerald-500/20 uppercase tracking-wide">CEJM</span>
+                    </div>
+                    <!-- Date claire, nette et précise -->
+                    <div class="text-xs sm:text-sm font-semibold text-rose-400 bg-rose-500/10 px-3 py-1 rounded-lg border border-rose-500/20">
+                        📅 Mercredi 4 Novembre 2026
+                    </div>
+                </div>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    Evaluation sur tous depuis le début de l'année.
+                </p>
+            </div>
+
+        </main>
+
+        <!-- Pied de page -->
+        <footer class="text-center text-gray-500 text-xs pt-4 border-t border-slate-800">
+            Dernière mise à jour : 16 octobre 2026 • Réservé à la classe
+        </footer>
+
+    </div>
+
+</body>
+</html>
